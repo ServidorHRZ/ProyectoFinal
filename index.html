@@ -292,27 +292,54 @@
                     <div class="installation-steps">
                         <h4>Pasos para instalar Eclipse:</h4>
                         <ol>
-                            <li>Primero, asegurarse de tener Java instalado:
+                            <li>Descargar e instalar Java OpenJDK:
                                 <div class="command-block">
-                                    <code>sudo dnf install java-latest-openjdk-devel</code>
+                                    <code>sudo dnf install java-latest-openjdk.x86_64</code>
                                     <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
                                 </div>
                             </li>
-                            <li>Descargar Eclipse desde el sitio oficial:
+                            <li>Instalar OpenJDK para programadores o developments:
                                 <div class="command-block">
-                                    <code>wget https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2024-03/R/eclipse-java-2024-03-R-linux-gtk-x86_64.tar.gz</code>
+                                    <code>sudo dnf install java-latest-openjdk-devel.x86_64</code>
                                     <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
                                 </div>
                             </li>
-                            <li>Extraer el archivo descargado:
+                            <li>Descomprimir los .tar.gz:
                                 <div class="command-block">
-                                    <code>sudo tar xzf eclipse-java-*-linux-gtk-x86_64.tar.gz -C /opt</code>
+                                    <code>tar xzf eclipse-*.tar.gz -C /opt</code>
                                     <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
                                 </div>
                             </li>
-                            <li>Crear un acceso directo para Eclipse:
+                            <li>Movemos la carpeta eclipse para la carpeta opt:
                                 <div class="command-block">
-                                    <code>echo -e "[Desktop Entry]\nVersion=1.0\nType=Application\nName=Eclipse\nComment=Eclipse IDE\nExec=/opt/eclipse/eclipse\nIcon=/opt/eclipse/icon.xpm\nCategories=Development;IDE;\nTerminal=false" | sudo tee /usr/share/applications/eclipse.desktop</code>
+                                    <code>sudo mv eclipse /opt/</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Modificar permisos:
+                                <div class="command-block">
+                                    <code>sudo chmod 755 /opt/eclipse</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Escribimos estas líneas:
+                                <div class="command-block">
+                                    <code>[Desktop Entry]
+Name=Eclipse
+Type=Application
+Exec=/opt/eclipse/eclipse
+Terminal=false
+Icon=/opt/eclipse/icon.xpm
+Comment=Integrated Development Environment
+NoDisplay=false
+Categories=Development;IDE;
+Name[en]=Eclipse</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Creamos un enlace simbólico para el IDE:
+                                <div class="command-block">
+                                    <code>sudo ln -s /opt/eclipse/eclipse /usr/local/bin/eclipse</code>
                                     <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
                                 </div>
                             </li>
@@ -325,20 +352,56 @@
                                 <div class="media-column">
                                     <div class="image-gallery">
                                         <div class="gallery-item">
-                                            <img src="IMG/eclipse1.png" alt="Instalación de Java" class="zoomable">
-                                            <div class="caption">Instalación de Java Development Kit</div>
+                                            <img src="IMG/img21.png" alt="1. Instalación Java" class="zoomable">
+                                            <div class="caption">Descargamos e instalamos Java en Fedora</div>
                                         </div>
                                         <div class="gallery-item">
-                                            <img src="IMG/eclipse2.png" alt="Descarga de Eclipse" class="zoomable">
-                                            <div class="caption">Descarga de Eclipse desde el sitio oficial</div>
+                                            <img src="IMG/img22.png" alt="2. OpenJDK Development" class="zoomable">
+                                            <div class="caption">Instalamos OpenJDK para programadores o developments</div>
                                         </div>
                                         <div class="gallery-item">
-                                            <img src="IMG/eclipse3.png" alt="Extracción de Eclipse" class="zoomable">
-                                            <div class="caption">Extracción del archivo de Eclipse</div>
+                                            <img src="IMG/img23.png" alt="3. Descomprimir Eclipse" class="zoomable">
+                                            <div class="caption">Descomprimimos los archivos .tar.gz de Eclipse</div>
                                         </div>
                                         <div class="gallery-item">
-                                            <img src="IMG/eclipse4.png" alt="Eclipse ejecutándose" class="zoomable">
-                                            <div class="caption">Eclipse IDE ejecutándose en Fedora</div>
+                                            <img src="IMG/img24.png" alt="3.5 Instalar Eclipse" class="zoomable">
+                                            <div class="caption">Instalamos Eclipse</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img25.png" alt="4. Mover Eclipse" class="zoomable">
+                                            <div class="caption">Movemos la carpeta Eclipse a la carpeta opt</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img26.png" alt="5. Modificar permisos" class="zoomable">
+                                            <div class="caption">Modificamos los permisos</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img27.png" alt="6. Configuración Desktop Entry" class="zoomable">
+                                            <div class="caption">Escribimos las líneas para el acceso directo</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img28.png" alt="7. Enlace simbólico" class="zoomable">
+                                            <div class="caption">Creamos un enlace simbólico para el IDE</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img29.png" alt="Eclipse ejecutándose" class="zoomable">
+                                            <div class="caption">Eclipse en ejecución</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img30.png" alt="OPCIONAL GNOME" class="zoomable">
+                                            <div class="caption">OPCIONAL: Para que el icono aparezca en el GNOME shell</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img31.png" alt="OPCIONAL Java" class="zoomable">
+                                            <div class="caption">OPCIONAL: Si se tienen otras versiones de Java instaladas</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img32.png" alt="REQUISITO" class="zoomable">
+                                            <div class="caption">REQUISITO: Habilitamos repositorio dusansimic</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img33.png" alt="ÚLTIMO" class="zoomable">
+                                            <div class="caption">ÚLTIMO: Seleccionamos el directorio de trabajo</div>
                                         </div>
                                         <div class="gallery-controls">
                                             <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
@@ -350,34 +413,22 @@
                         </div>
                     </div>
                     <h3>1.2 Instalación en Ambiente Consola (Debian Server)</h3>
-                    <p class="paso-destacado"><strong>Paso 1:</strong> Descargar la imagen ISO de Debian Server y crear una nueva máquina virtual en VirtualBox.</p>
-
                     <div class="media-section">
                         <div class="media-container">
                             <div class="media-row">
                                 <div class="media-column">
-                                    <div class="image-gallery">
-                                        <div class="gallery-item">
-                                            <img src="IMG/debian1.png" alt="Descarga Debian" class="zoomable">
-                                            <div class="caption">Descarga de ISO Debian Server desde el sitio oficial</div>
-                                        </div>
-                                        <div class="gallery-item">
-                                            <img src="IMG/debian2.png" alt="Configuración VM" class="zoomable">
-                                            <div class="caption">Configuración inicial de la máquina virtual para Debian</div>
-                                        </div>
-                                        <div class="gallery-item">
-                                            <img src="IMG/debian3.png" alt="Inicio instalación" class="zoomable">
-                                            <div class="caption">Inicio del proceso de instalación de Debian Server</div>
-                                        </div>
-                                        <div class="gallery-controls">
-                                            <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
-                                            <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
-                                        </div>
+                                    <div class="video-container">
+                                        <h4>Solucion error sudoers file</h4>
+                                        <iframe src="https://drive.google.com/file/d/15vxaeYu_uT07nmD1w8BhgdkDCAmMAd0W/preview" 
+                                                frameborder="0" 
+                                                allowfullscreen>
+                                        </iframe>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <p class="paso-destacado"><strong>Paso 1:</strong> Descargar la imagen ISO de Debian Server y crear una nueva máquina virtual en VirtualBox.</p>
 
                     <p class="paso-destacado"><strong>Paso 2:</strong> Configuración inicial del sistema durante la instalación</p>
 
@@ -437,16 +488,16 @@ swap: 2GB</code>
                                 <div class="media-column">
                                     <div class="image-gallery">
                                         <div class="gallery-item">
-                                            <img src="IMG/debian4.png" alt="Post instalación" class="zoomable">
-                                            <div class="caption">Sistema Debian Server instalado y actualizado</div>
+                                            <img src="IMG/img41.png" alt="Instalación de curl" class="zoomable">
+                                            <div class="caption">Instalación de curl como herramienta</div>
                                         </div>
                                         <div class="gallery-item">
-                                            <img src="IMG/debian5.png" alt="Configuración red" class="zoomable">
-                                            <div class="caption">Configuración de red completada</div>
+                                            <img src="IMG/img42.png" alt="Verificación de conectividad" class="zoomable">
+                                            <div class="caption">Verificación de conectividad con curl</div>
                                         </div>
                                         <div class="gallery-item">
-                                            <img src="IMG/debian6.png" alt="Sistema funcionando" class="zoomable">
-                                            <div class="caption">Sistema Debian Server funcionando correctamente</div>
+                                            <img src="IMG/img43.png" alt="Actualización de servicios" class="zoomable">
+                                            <div class="caption">Actualización y reinicio de servicios relacionados</div>
                                         </div>
                                         <div class="gallery-controls">
                                             <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
@@ -465,10 +516,79 @@ swap: 2GB</code>
             <h2>2. Instalación de Editores de Texto y Entornos de Desarrollo</h2>
             <div class="content">
                 <div class="text-content">
-                    <!-- Contenido del punto 2 -->
-                </div>
-                <div class="media-gallery">
-                    <!-- Aquí irán tus videos e imágenes -->
+                    <p class="paso-destacado"><strong>Paso 1:</strong> Actualización de repositorios y paquetes</p>
+                    <div class="command-block">
+                        <code>sudo dnf update</code>
+                        <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                    </div>
+
+                    <p class="paso-destacado"><strong>Paso 2:</strong> Instalación de editores de texto básicos (vim y nano)</p>
+                    <div class="command-block">
+                        <code>sudo dnf install vim nano -y</code>
+                        <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                    </div>
+
+                    <div class="media-section">
+                        <div class="media-container">
+                            <div class="media-row">
+                                <div class="media-column">
+                                    <div class="image-gallery">
+                                        <div class="gallery-item">
+                                            <img src="IMG/img34.png" alt="Actualización de repositorios" class="zoomable">
+                                            <div class="caption">Actualización de repositorios del sistema</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img35.png" alt="Instalación de vim y nano" class="zoomable">
+                                            <div class="caption">Instalación de los editores vim y nano</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img36.png" alt="Instalación de apt-get" class="zoomable">
+                                            <div class="caption">Instalación de apt-get</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img37.png" alt="Instalación de dpkg" class="zoomable">
+                                            <div class="caption">Instalación de dpkg</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img38.png" alt="Vim en funcionamiento" class="zoomable">
+                                            <div class="caption">Editor vim en funcionamiento</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img39.png" alt="Nano en funcionamiento" class="zoomable">
+                                            <div class="caption">Editor nano en funcionamiento</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img40.png" alt="Ambos editores funcionando" class="zoomable">
+                                            <div class="caption">Ambos editores instalados y funcionando correctamente</div>
+                                        </div>
+                                        <div class="gallery-controls">
+                                            <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                            <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="paso-destacado"><strong>Paso 3:</strong> Instalación de herramientas adicionales</p>
+                    <div class="installation-steps">
+                        <h4>Comandos para instalar herramientas adicionales:</h4>
+                        <ol>
+                            <li>Instalar apt-get:
+                                <div class="command-block">
+                                    <code>sudo dnf install apt-get</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Instalar dpkg:
+                                <div class="command-block">
+                                    <code>sudo dnf install dpkg</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </section>

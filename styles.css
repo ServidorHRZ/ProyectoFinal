@@ -761,7 +761,7 @@ h2 {
 }
 
 .command-block code {
-    color: #0066ff; /* Color verde para los comandos */
+    color: #ffffff; /* Color verde para los comandos */
     display: block;
     white-space: pre-wrap;
     word-wrap: break-word;
