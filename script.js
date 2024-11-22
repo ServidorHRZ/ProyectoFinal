@@ -46,28 +46,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Funcionalidad de galería de imágenes
     const galleries = document.querySelectorAll('.image-gallery');
+    
     galleries.forEach(gallery => {
         const items = gallery.querySelectorAll('.gallery-item');
+        const prevBtn = gallery.querySelector('.prev');
+        const nextBtn = gallery.querySelector('.next');
         let currentIndex = 0;
 
         // Mostrar primera imagen
-        items[0].classList.add('active');
+        if (items.length > 0) {
+            items[0].classList.add('active');
+        }
 
-        // Botones de navegación
-        const prevBtn = gallery.parentElement.querySelector('.prev');
-        const nextBtn = gallery.parentElement.querySelector('.next');
+        // Función para cambiar imagen
+        function showImage(index) {
+            items.forEach(item => item.classList.remove('active'));
+            items[index].classList.add('active');
+            currentIndex = index;
+        }
 
-        prevBtn.addEventListener('click', () => {
-            items[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex - 1 + items.length) % items.length;
-            items[currentIndex].classList.add('active');
-        });
+        // Navegación
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                let newIndex = (currentIndex - 1 + items.length) % items.length;
+                showImage(newIndex);
+            });
+        }
 
-        nextBtn.addEventListener('click', () => {
-            items[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % items.length;
-            items[currentIndex].classList.add('active');
-        });
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                let newIndex = (currentIndex + 1) % items.length;
+                showImage(newIndex);
+            });
+        }
     });
 
     // Función para resaltar sintaxis
@@ -90,4 +101,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Llamar a la función directamente
     highlightCode();
+
+    // Funcionalidad del modal de imágenes
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const closeBtn = document.querySelector('.close-modal');
+
+    document.querySelectorAll('.zoomable').forEach(img => {
+        img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+            
+            // Obtener el caption desde el elemento siguiente (div.caption)
+            const caption = this.closest('.gallery-item').querySelector('.caption');
+            modalCaption.textContent = caption ? caption.textContent : '';
+            
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Función para cerrar el modal
+    function closeModal() {
+        modal.style.display = "none";
+        document.body.style.overflow = 'auto';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === "flex") {
+            closeModal();
+        }
+    });
 });
