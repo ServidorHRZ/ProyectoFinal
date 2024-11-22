@@ -143,4 +143,23 @@ document.addEventListener('DOMContentLoaded', function() {
             closeModal();
         }
     });
+
+    // Agregar esta función al archivo script.js
+    function copyCommand(button) {
+        const commandBlock = button.parentElement;
+        const commandText = commandBlock.querySelector('code').textContent;
+        
+        navigator.clipboard.writeText(commandText).then(() => {
+            const originalText = button.textContent;
+            button.textContent = '¡Copiado!';
+            button.style.backgroundColor = 'rgba(0, 255, 0, 0.2)';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+            }, 2000);
+        }).catch(err => {
+            console.error('Error al copiar el comando:', err);
+        });
+    }
 });

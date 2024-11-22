@@ -711,3 +711,87 @@ h2 {
 .zoomable {
     cursor: zoom-in;
 }
+
+.installation-steps {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.installation-steps h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.installation-steps ol {
+    padding-left: 1.5rem;
+}
+
+.installation-steps li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.installation-steps code {
+    background: #e9ecef;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .installation-steps {
+        padding: 1rem;
+    }
+}
+
+.command-block {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 6px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.command-block code {
+    color: #0066ff; /* Color verde para los comandos */
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.command-block .copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #ffffff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.2s;
+}
+
+.command-block .copy-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.installation-steps code {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    display: inline-block;
+    margin: 0.2rem 0;
+}

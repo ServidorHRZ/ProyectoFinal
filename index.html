@@ -163,6 +163,300 @@
                             </div>
                         </div>
                     </div>
+                    <p class="paso-destacado"><strong>Paso 3:</strong> Instalación de navegadores web en Fedora. Para tener un entorno de trabajo completo, instalaremos los navegadores más populares.</p>
+                    <div class="installation-steps">
+                        <h4>Pasos para instalar Google Chrome:</h4>
+                        <ol>
+                            <li>Abrir la terminal y ejecutar el comando de instalación:
+                                <div class="command-block">
+                                    <code>sudo dnf install google-chrome-stable -y</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>El sistema instalará automáticamente Google Chrome y sus dependencias</li>
+                        </ol>
+                    </div>
+                    <div class="media-section">
+                        <div class="media-container">
+                            <div class="media-row">
+                                <div class="media-column">
+                                    <div class="image-gallery"> 
+                                        <div class="gallery-item">
+                                            <img src="IMG/img12.png" alt="Instalación Firefox" class="zoomable">
+                                            <div class="caption">Firefox viene preinstalado en Fedora</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img13.png" alt="Descarga Chrome" class="zoomable">
+                                            <div class="caption">Descarga de Google Chrome desde el sitio oficial</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img8.png" alt="Instalación Chrome" class="zoomable">
+                                            <div class="caption">descargar chrome para linux para la distribucion fedora RPM</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img9.png" alt="Configuración Chrome" class="zoomable">
+                                            <div class="caption">instalamos el google chrome desde la terminal como usuarios root</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img10.png" alt="Chrome Extensions" class="zoomable">
+                                            <div class="caption">instalacion de chrome completada</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img11.png" alt="Chrome Personalización" class="zoomable">
+                                            <div class="caption">google chrome instalado correctamente en fedora</div>
+                                        </div>
+                                        
+                                        <div class="gallery-controls">
+                                            <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                            <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="paso-destacado"><strong>Paso 4:</strong> Instalación de Visual Studio Code en Fedora</p>
+
+                    <div class="installation-steps">
+                        <h4>Pasos para instalar Visual Studio Code:</h4>
+                        <ol>
+                            <li>Importar las llaves de Microsoft:
+                                <div class="command-block">
+                                    <code>sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Importar el repositorio de VSCode:
+                                <div class="command-block">
+                                    <code>echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Verificar actualizaciones:
+                                <div class="command-block">
+                                    <code>dnf check-update</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Instalar Visual Studio Code:
+                                <div class="command-block">
+                                    <code>sudo dnf install code</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="media-section">
+                        <div class="media-container">
+                            <div class="media-row">
+                                <div class="media-column">
+                                    <div class="image-gallery">
+                                        <div class="gallery-item">
+                                            <img src="IMG/img14.png" alt="Descarga VSCode" class="zoomable">
+                                            <div class="caption">Descargamos el overview del Visual Studio Code para Linux de Fedora</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img15.png" alt="Ejecutar VSCode" class="zoomable">
+                                            <div class="caption">Ejecutar el archivo descargado del VSCode</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img16.png" alt="Importar llaves" class="zoomable">
+                                            <div class="caption">Importamos las llaves de Microsoft</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img17.png" alt="Búsqueda archivo" class="zoomable">
+                                            <div class="caption">Líneas para que la terminal busque el archivo a descargar</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img18.png" alt="Verificar actualizaciones" class="zoomable">
+                                            <div class="caption">Verificación de actualizaciones</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img19.png" alt="VSCode ejecutándose" class="zoomable">
+                                            <div class="caption">Instalar Visual Studio Code</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img20.png" alt="VSCode interfaz" class="zoomable">
+                                            <div class="caption">Visual Studio Code ya corriendo en Fedora</div>
+                                        </div>
+                                        <div class="gallery-controls">
+                                            <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                            <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="installation-steps">
+                        <h4>Pasos para instalar Eclipse:</h4>
+                        <ol>
+                            <li>Primero, asegurarse de tener Java instalado:
+                                <div class="command-block">
+                                    <code>sudo dnf install java-latest-openjdk-devel</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Descargar Eclipse desde el sitio oficial:
+                                <div class="command-block">
+                                    <code>wget https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2024-03/R/eclipse-java-2024-03-R-linux-gtk-x86_64.tar.gz</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Extraer el archivo descargado:
+                                <div class="command-block">
+                                    <code>sudo tar xzf eclipse-java-*-linux-gtk-x86_64.tar.gz -C /opt</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Crear un acceso directo para Eclipse:
+                                <div class="command-block">
+                                    <code>echo -e "[Desktop Entry]\nVersion=1.0\nType=Application\nName=Eclipse\nComment=Eclipse IDE\nExec=/opt/eclipse/eclipse\nIcon=/opt/eclipse/icon.xpm\nCategories=Development;IDE;\nTerminal=false" | sudo tee /usr/share/applications/eclipse.desktop</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="media-section">
+                        <div class="media-container">
+                            <div class="media-row">
+                                <div class="media-column">
+                                    <div class="image-gallery">
+                                        <div class="gallery-item">
+                                            <img src="IMG/eclipse1.png" alt="Instalación de Java" class="zoomable">
+                                            <div class="caption">Instalación de Java Development Kit</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/eclipse2.png" alt="Descarga de Eclipse" class="zoomable">
+                                            <div class="caption">Descarga de Eclipse desde el sitio oficial</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/eclipse3.png" alt="Extracción de Eclipse" class="zoomable">
+                                            <div class="caption">Extracción del archivo de Eclipse</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/eclipse4.png" alt="Eclipse ejecutándose" class="zoomable">
+                                            <div class="caption">Eclipse IDE ejecutándose en Fedora</div>
+                                        </div>
+                                        <div class="gallery-controls">
+                                            <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                            <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>1.2 Instalación en Ambiente Consola (Debian Server)</h3>
+                    <p class="paso-destacado"><strong>Paso 1:</strong> Descargar la imagen ISO de Debian Server y crear una nueva máquina virtual en VirtualBox.</p>
+
+                    <div class="media-section">
+                        <div class="media-container">
+                            <div class="media-row">
+                                <div class="media-column">
+                                    <div class="image-gallery">
+                                        <div class="gallery-item">
+                                            <img src="IMG/debian1.png" alt="Descarga Debian" class="zoomable">
+                                            <div class="caption">Descarga de ISO Debian Server desde el sitio oficial</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/debian2.png" alt="Configuración VM" class="zoomable">
+                                            <div class="caption">Configuración inicial de la máquina virtual para Debian</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/debian3.png" alt="Inicio instalación" class="zoomable">
+                                            <div class="caption">Inicio del proceso de instalación de Debian Server</div>
+                                        </div>
+                                        <div class="gallery-controls">
+                                            <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                            <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="paso-destacado"><strong>Paso 2:</strong> Configuración inicial del sistema durante la instalación</p>
+
+                    <div class="installation-steps">
+                        <h4>Pasos clave durante la instalación:</h4>
+                        <ol>
+                            <li>Seleccionar idioma y ubicación</li>
+                            <li>Configurar el teclado</li>
+                            <li>Configurar la red:
+                                <div class="command-block">
+                                    <code>Hostname: debian-server
+Dominio: local</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Configurar usuarios y contraseñas</li>
+                            <li>Particionar el disco:
+                                <div class="command-block">
+                                    <code>/ (root): 15GB
+/home: 10GB
+swap: 2GB</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <p class="paso-destacado"><strong>Paso 3:</strong> Configuración post-instalación y actualización del sistema</p>
+
+                    <div class="installation-steps">
+                        <h4>Comandos esenciales post-instalación:</h4>
+                        <ol>
+                            <li>Actualizar lista de paquetes:
+                                <div class="command-block">
+                                    <code>sudo apt update</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Actualizar el sistema:
+                                <div class="command-block">
+                                    <code>sudo apt upgrade -y</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Instalar herramientas esenciales:
+                                <div class="command-block">
+                                    <code>sudo apt install -y vim net-tools htop</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="media-section">
+                        <div class="media-container">
+                            <div class="media-row">
+                                <div class="media-column">
+                                    <div class="image-gallery">
+                                        <div class="gallery-item">
+                                            <img src="IMG/debian4.png" alt="Post instalación" class="zoomable">
+                                            <div class="caption">Sistema Debian Server instalado y actualizado</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/debian5.png" alt="Configuración red" class="zoomable">
+                                            <div class="caption">Configuración de red completada</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/debian6.png" alt="Sistema funcionando" class="zoomable">
+                                            <div class="caption">Sistema Debian Server funcionando correctamente</div>
+                                        </div>
+                                        <div class="gallery-controls">
+                                            <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                            <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
