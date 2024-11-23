@@ -795,3 +795,96 @@ h2 {
     display: inline-block;
     margin: 0.2rem 0;
 }
+
+/* Estilos para el modal QR */
+.qr-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-modal.active {
+    display: flex;
+}
+
+.qr-container {
+    background: white;
+    padding: 40px 20px 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.qr-container img {
+    max-width: 200px;
+    height: auto;
+}
+
+.close-qr {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.close-qr:before,
+.close-qr:after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+.close-qr:before {
+    transform: rotate(45deg);
+}
+
+.close-qr:after {
+    transform: rotate(-45deg);
+}
+
+.close-qr:hover {
+    background: #e0e0e0;
+    transform: rotate(90deg);
+}
+
+.close-qr:hover:before,
+.close-qr:hover:after {
+    background-color: #000;
+}
+
+.qr-container p {
+    margin-top: 15px;
+    color: #333;
+}
+
+/* Estilo para el icono QR en el menú */
+#qrButton {
+    font-size: 1.2em;
+}
+
+#qrButton:hover {
+    color: #ccc;
+}

@@ -162,4 +162,40 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error al copiar el comando:', err);
         });
     }
+
+    // Agregar dentro del DOMContentLoaded
+    const qrButton = document.getElementById('qrButton');
+    const qrModal = document.getElementById('qrModal');
+    const closeQr = document.querySelector('.close-qr');
+
+    qrButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        qrModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    function closeQrModal() {
+        qrModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    closeQr.addEventListener('click', closeQrModal);
+
+    qrModal.addEventListener('click', function(e) {
+        if (e.target === qrModal) {
+            closeQrModal();
+        }
+    });
+
+    // Agregar al evento keydown existente
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (modal.style.display === "flex") {
+                closeModal();
+            }
+            if (qrModal.classList.contains('active')) {
+                closeQrModal();
+            }
+        }
+    });
 });

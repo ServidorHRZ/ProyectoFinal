@@ -13,6 +13,13 @@
         <img id="modalImage" class="modal-content">
         <div id="modalCaption"></div>
     </div>
+    <div id="qrModal" class="qr-modal">
+        <div class="qr-container">
+            <button class="close-qr" aria-label="Cerrar"></button>
+            <img id="qrImage" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://servidorhrz.github.io/ProyectoFinal/" alt="QR Code">
+            <p>Escanea para visitar el sitio</p>
+        </div>
+    </div>
     <nav class="navbar">
         <div class="nav-content">
             <h1>Proyecto Final SO - Grupo 4</h1>
@@ -28,6 +35,7 @@
                 <li><a href="#punto4">Punto 4</a></li>
                 <li><a href="#punto5">Punto 5</a></li>
                 <li><a href="#punto6">Punto 6</a></li>
+                <li><a href="#" id="qrButton"><i class="fas fa-qrcode"></i></a></li>
             </ul>
         </div>
     </nav>
@@ -595,22 +603,687 @@ swap: 2GB</code>
 
         <section id="punto3" class="section">
             <h2>3. Creación de Scripts de Automatización en Bash</h2>
-            
+            <div class="content">
+                <div class="text-content">
+                    <h3>3.1 Script en Entorno Gráfico</h3>
+                    
+                    <p class="paso-destacado"><strong>Paso 1:</strong> Crear los archivos de script</p>
+                    <div class="installation-steps">
+                        <h4>Comandos utilizados:</h4>
+                        <ol>
+                            <li>Crear archivo de script:
+                                <div class="command-block">
+                                    <code>touch mi_script.sh</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Crear directorio de backups:
+                                <div class="command-block">
+                                    <code>sudo dnf install mkdir</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <p class="paso-destacado"><strong>Paso 2:</strong> Editar el script de backup</p>
+                    <div class="installation-steps">
+                        <h4>Contenido del script mi_script.sh:</h4>
+                        <div class="command-block">
+                            <code>origen="/home/migueloso/Documentos"
+destino="/home/migueloso/backups"
+fecha=$(date +%F)
+archivo_backup="backup-$fecha.tar.gz"
+
+tar -czf "$destino/$archivo_backup" "$origen"
+echo "Backup realizado: $destino/$archivo_backup"</code>
+                            <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="media-section">
+                        <div class="media-container">
+                            <div class="media-row">
+                                <div class="media-column">
+                                    <div class="image-gallery">
+                                        <div class="gallery-item">
+                                            <img src="IMG/img63.png" alt="creamos el archivo del script" class="zoomable">
+                                            <div class="caption">creamos el archivo del script</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img64.png" alt="instalamos mkdir" class="zoomable">
+                                            <div class="caption">instalamos mkdir</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img65.png" alt="entramos a crear el script" class="zoomable">
+                                            <div class="caption">entramos a crear el script</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img66.png" alt="se crea el script" class="zoomable">
+                                            <div class="caption">se crea el script</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img67.png" alt="creamos la carpeta donde se guardaran los backups" class="zoomable">
+                                            <div class="caption">creamos la carpeta donde se guardaran los backups</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img68.png" alt="le damos permisos a la carpeta backup para poder acceder a ella y poder eliminar los backu" class="zoomable">
+                                            <div class="caption">le damos permisos a la carpeta backup para poder acceder a ella y poder eliminar los backu</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img69.png" alt="ejecutamos el script" class="zoomable">
+                                            <div class="caption">ejecutamos el script</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img70.png" alt="bakcup de prueba" class="zoomable">
+                                            <div class="caption">bakcup de prueba</div>
+                                        </div>
+                                        <div class="gallery-controls">
+                                            <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                            <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="media-column">
+                        <div class="video-container">
+                            <h4>Video demostrativo: Creación y ejecución del script de backup</h4>
+                            <iframe src="https://drive.google.com/file/d/1OQUozjP75SJp5Pgb9NiVzMTF1vbPfrCB/preview" 
+                                    frameborder="0" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <h3>3.2 Script en Entorno Consola</h3>
+                    <div class="content">
+                        <div class="text-content">
+                            <p class="paso-destacado"><strong>Paso 1:</strong> Crear el archivo de script</p>
+                            <div class="installation-steps">
+                                <h4>Comandos utilizados:</h4>
+                                <div class="command-block">
+                                    <code>touch mi_script.sh</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </div>
+
+                            <p class="paso-destacado"><strong>Paso 2:</strong> Editar el script de backup</p>
+                            <div class="installation-steps">
+                                <h4>Contenido del script mi_script.sh:</h4>
+                                <div class="command-block">
+                                    <code>origen="/home/migueldeb/Documentos"
+destino="/home/migueldeb/backups"
+fecha=$(date +%F)
+archivo_backup="backup-$fecha.tar.gz"
+
+tar -czf "$destino/$archivo_backup" "$origen"
+echo "Backup Realizado: $destino/$archivo_backup"</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </div>
+
+                            <p class="paso-destacado"><strong>Paso 3:</strong> Crear directorio de backups y establecer permisos</p>
+                            <div class="installation-steps">
+                                <h4>Comandos para preparar el entorno:</h4>
+                                <div class="command-block">
+                                    <code>mkdir backups
+chmod 755 backups</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </div>
+
+                            <div class="media-section">
+                                <div class="media-container">
+                                    <div class="media-row">
+                                        <div class="media-column">
+                                            <div class="image-gallery">
+                                                <div class="gallery-item">
+                                                    <img src="IMG/img71.png" alt="Creación del archivo script" class="zoomable">
+                                                    <div class="caption">Creación del archivo de script</div>
+                                                </div>
+                                                <div class="gallery-item">
+                                                    <img src="IMG/img72.png" alt="Edición del script" class="zoomable">
+                                                    <div class="caption">Entramos a escribir el script</div>
+                                                </div>
+                                                <div class="gallery-item">
+                                                    <img src="IMG/img73.png" alt="Contenido del script" class="zoomable">
+                                                    <div class="caption">Escribimos el script dentro del archivo</div>
+                                                </div>
+                                                <div class="gallery-item">
+                                                    <img src="IMG/img74.png" alt="Creación del directorio backups" class="zoomable">
+                                                    <div class="caption">Creamos la carpeta donde se guardarán los backups</div>
+                                                </div>
+                                                <div class="gallery-item">
+                                                    <img src="IMG/img75.png" alt="Configuración de permisos" class="zoomable">
+                                                    <div class="caption">Damos permisos a la carpeta backup para poder acceder y eliminar los backups</div>
+                                                </div>
+                                                <div class="gallery-controls">
+                                                    <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                                    <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media-section">
+                                <div class="media-container">
+                                    <div class="media-row">
+                                        <div class="media-column">
+                                            <div class="video-container">
+                                                <h4>Video demostracion script debian</h4>
+                                                <iframe src="https://drive.google.com/file/d/1OQUozjP75SJp5Pgb9NiVzMTF1vbPfrCB/preview" 
+                                                        frameborder="0" 
+                                                        allowfullscreen>
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="punto4" class="section">
             <h2>4. Instalación y Configuración de Docker</h2>
-           
-        </section>
+            <div class="content">
+                <div class="text-content">
+                    <h3>4.1 Instalación de Docker Desktop</h3>
+                    
+                    <p class="paso-destacado"><strong>Paso 1:</strong> Verificar Requisitos</p>
+                    <div class="installation-steps">
+                        <h4>Activar WSL 2:</h4>
+                        <ol>
+                            <li>Abrir PowerShell como administrador y ejecutar:
+                                <div class="command-block">
+                                    <code>wsl --install</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                                <p>Esto instala la última versión de WSL y configura WSL 2 como predeterminado.</p>
+                            </li>
+                        </ol>
 
-        <section id="punto5" class="section">
-            <h2>5. Modificación y Publicación en Docker Hub</h2>
+                        <h4>Configurar una distribución de Linux:</h4>
+                        <ol>
+                            <li>Ver distribuciones disponibles:
+                                <div class="command-block">
+                                    <code>wsl --list --online</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Instalar una distribución específica:
+                                <div class="command-block">
+                                    <code>wsl --install -d &lt;nombre-de-la-distribución&gt;</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <p class="paso-destacado"><strong>Paso 2:</strong> Descargar Docker Desktop</p>
+                    <div class="installation-steps">
+                        <ol>
+                            <li>Visitar la página oficial de Docker</li>
+                            <li>Descargar la versión compatible con tu sistema operativo</li>
+                        </ol>
+                    </div>
+
+                    <p class="paso-destacado"><strong>Paso 3:</strong> Instalar Docker Desktop</p>
+                    <div class="installation-steps">
+                        <ol>
+                            <li>Ejecutar el instalador de Docker Desktop</li>
+                            <li>Aceptar los términos y condiciones</li>
+                            <li>Seleccionar "Enable WSL 2 Features" durante la instalación</li>
+                            <li>Verificar que tu distribución de Linux esté marcada para integración con Docker</li>
+                        </ol>
+                    </div>
+
+                    <p class="paso-destacado"><strong>Paso 4:</strong> Verificar Instalación</p>
+                    <div class="installation-steps">
+                        <ol>
+                            <li>Abrir Command Prompt (CMD) o una terminal en tu distribución de Linux en WSL</li>
+                            <li>Ejecutar el comando:
+                                <div class="command-block">
+                                    <code>docker --version</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                                <p>Esto mostrará la versión de Docker instalada.</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="media-section">
+                        <div class="media-container">
+                            <div class="media-row">
+                                <div class="media-column">
+                                    <div class="image-gallery">
+                                        <div class="gallery-item">
+                                            <img src="IMG/img44.jpeg" alt="Creación del directorio" class="zoomable">
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img45.jpeg" alt="Creación del Dockerfile" class="zoomable">
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img46.jpeg" alt="Contenido del Dockerfile" class="zoomable">
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img47.jpeg" alt="Construcción de la imagen" class="zoomable">
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img48.jpeg" alt="Imagen construida" class="zoomable">
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img49.jpeg" alt="Verificación de la imagen" class="zoomable">
+                                        </div>
+                                        
+                                        <div class="gallery-controls">
+                                            <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                            <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>4.2 Creación de imagen Docker</h3>
+                    <p class="paso-destacado"><strong>Paso 1:</strong> Crear y configurar el Dockerfile</p>
+
+                    <div class="installation-steps">
+                        <h4>Comandos utilizados:</h4>
+                        <ol>
+                            <li>Crear directorio del proyecto:
+                                <div class="command-block">
+                                    <code>mkdir proyecto-debian-docker</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Navegar al directorio:
+                                <div class="command-block">
+                                    <code>cd proyecto-debian-docker</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Crear archivo Dockerfile:
+                                <div class="command-block">
+                                    <code>echo. > Dockerfile</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Abrir Dockerfile para edición:
+                                <div class="command-block">
+                                    <code>notepad Dockerfile</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <h4>Contenido del Dockerfile:</h4>
+                        <div class="command-block">
+                            <code>FROM debian:latest
+
+
+CMD ["/bin/bash"]</code>
+                            <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                        </div>
+                    </div>
+
+                    <p class="paso-destacado"><strong>Paso 2:</strong> Construir la imagen Docker</p>
+                    <div class="installation-steps">
+                        <h4>Comando para construir la imagen:</h4>
+                        <div class="command-block">
+                            <code>docker build -t debian-dev-env .</code>
+                            <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="media-section">
+                <div class="media-container">
+                    <div class="media-row">
+                        <div class="media-column">
+                            <div class="image-gallery">
+                                <div class="gallery-item">
+                                    <img src="IMG/img50.jpeg" alt="Creación del directorio" class="zoomable">
+                                    <div class="caption">Creación del directorio del proyecto y navegación</div>
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="IMG/img51.jpeg" alt="Creación del Dockerfile" class="zoomable">
+                                    <div class="caption">Creación y edición inicial del Dockerfile</div>
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="IMG/img53.jpeg" alt="Construcción de la imagen" class="zoomable">
+                                    <div class="caption">Proceso de construcción de la imagen Docker</div>
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="IMG/img54.jpeg" alt="Imagen construida" class="zoomable">
+                                    <div class="caption">Imagen Docker construida exitosamente</div>
+                                </div>
+                                <div class="gallery-controls">
+                                    <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                    <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>4.3 Creación de contenedor</h3>
+            <div class="installation-steps">
+                <h4>Comandos para crear y gestionar el contenedor:</h4>
+                <ol>
+                    <li>Crear y ejecutar el contenedor:
+                        <div class="command-block">
+                            <code>docker run -it debian</code>
+                            <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                        </div>
+                        <p>Este comando crea y ejecuta un contenedor interactivo con el nombre "debian-container" basado en nuestra imagen debian-dev-env</p>
+                    </li>
+                    <li>Verificar el estado del contenedor:
+                        <div class="command-block">
+                            <code>docker ps -a</code>
+                            <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            
+            <p class="paso-destacado"><strong>Paso 1:</strong> Crear y ejecutar el contenedor Docker</p>
+            <div class="media-section">
+                <div class="media-container">
+                    <div class="media-row">
+                        <div class="media-column">
+                            <div class="image-gallery">
+                                <div class="gallery-item">
+                                    <img src="IMG/img55.jpeg" alt="Creación del contenedor" class="zoomable">
+                                    <div class="caption">Creación y ejecución inicial del contenedor</div>
+                                </div>
+                                <div class="gallery-controls">
+                                    <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                    <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section id="punto5" class="section">
+                <h2>5. Modificación y Publicación en Docker Hub</h2>
+                <div class="content">
+                    <div class="text-content">
+                        <h3>5.1 Modificación de imagen</h3>
+                        
+                        <p class="paso-destacado"><strong>Paso 1:</strong> Modificar el Dockerfile para incluir herramientas adicionales</p>
+                        
+                        <div class="installation-steps">
+                            <h4>Contenido del Dockerfile modificado:</h4>
+                            <div class="command-block">
+                                <code>FROM debian:latest
+
+RUN apt-get update && apt-get install -y \
+    nano \
+    wget \
+    curl \
+    software-properties-common \
+    libreoffice \
+    code
+
+# Instalar Atom (desde repositorio externo)
+RUN wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add - && \
+    echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list && \
+    apt-get update && apt-get install -y atom
+
+# Instalar Eclipse
+RUN wget https://ftp.osuosl.org/pub/eclipse/oomph/epp/2023-06/R/eclipse-inst-jre-linux64.tar.gz && \
+    tar -xzvf eclipse-inst-jre-linux64.tar.gz -C /opt && \
+    rm eclipse-inst-jre-linux64.tar.gz
+
+# Crear enlace simbólico para Eclipse
+RUN ln -s /opt/eclipse-installer/eclipse-inst /usr/local/bin/eclipse
+
+CMD ["/bin/bash"]</code>
+                                <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                            </div>
+                        </div>
+
+                        <p class="paso-destacado"><strong>Paso 2:</strong> Construir la nueva versión de la imagen</p>
+                        
+                        <div class="installation-steps">
+                            <h4>Comando para construir la imagen:</h4>
+                            <div class="command-block">
+                                <code>docker build -t debian-dev-env:v2 .</code>
+                                <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                            </div>
+                        </div>
+                        <div class="media-section">
+                            <div class="media-container">
+                                <div class="media-row">
+                                    <div class="media-column">
+                                        <div class="image-gallery">
+                                            <div class="gallery-item">
+                                                <img src="IMG/img51.jpeg" alt="Construcción de la imagen 1" class="zoomable">
+                                                <div class="caption">Imagen original</div>
+                                            </div>
+                                            <div class="gallery-item">
+                                                <img src="IMG/img52.jpeg" alt="Construcción de la imagen 2" class="zoomable">
+                                                <div class="caption">Imagen modificada</div>
+                                            </div>
+                                            <div class="gallery-item">
+                                                <img src="IMG/img56.jpeg" alt="Construcción de la imagen 3" class="zoomable">
+                                                <div class="caption">Construcción de la imagen modificada</div>
+                                            </div>
+                                            <div class="gallery-controls">
+                                                <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                                <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>5.2 Publicación en Docker Hub</h3>
+                        <p class="paso-destacado"><strong>Paso 1:</strong> Etiquetar la imagen para Docker Hub</p>
+                        
+                        <div class="installation-steps">
+                            <h4>Comando para etiquetar la imagen:</h4>
+                            <div class="command-block">
+                                <code>docker tag 10901ccd8d24 andreshrz/mi_imagen_debian:latest</code>
+                                <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                            </div>
+                        </div>
+                        
+                        <p class="paso-destacado"><strong>Paso 2:</strong> Publicar la imagen en Docker Hub</p>
+                        
+                        <div class="installation-steps">
+                            <h4>Comando para publicar la imagen:</h4>
+                            <div class="command-block">
+                                <code>docker push andreshrz/debian_personalizada:latest</code>
+                                <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                            </div>
+                        </div>
+                        
+                        <div class="media-section">
+                            <div class="media-container">
+                                <div class="media-row">
+                                    <div class="media-column">
+                                        <div class="image-gallery">
+                                            <div class="gallery-item">
+                                                <img src="IMG/img57.jpeg" alt="Publicación en Docker Hub" class="zoomable">
+                                                <div class="caption">Proceso de etiquetado y publicación en Docker Hub</div>
+                                            </div>
+                                            <div class="gallery-item">
+                                                <img src="IMG/img58.jpeg" alt="Verificación en Docker Hub" class="zoomable">
+                                                <div class="caption">Verificación de la imagen publicada en Docker Hub</div>
+                                            </div>
+                                            <div class="gallery-controls">
+                                                <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                                <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                </section>
+                
+            </section>
             
         </section>
 
         <section id="punto6" class="section">
             <h2>6. Instalación y Configuración de Kubernetes</h2>
-            
+            <div class="content">
+                <div class="text-content">
+                    <h3>6.1 Instalación en Docker Desktop</h3>
+                    
+                    <p class="paso-destacado"><strong>Paso 1:</strong> Habilitar Kubernetes en Docker Desktop</p>
+                    <div class="installation-steps">
+                        <ol>
+                            <li>Abrir Docker Desktop</li>
+                            <li>Ir a Configuración (Settings)</li>
+                            <li>Seleccionar "Kubernetes" en el menú lateral</li>
+                            <li>Marcar la casilla "Enable Kubernetes"</li>
+                            <li>Hacer clic en "Apply & Restart"</li>
+                        </ol>
+                    </div>
+
+                    <p class="paso-destacado"><strong>Paso 2:</strong> Verificar la instalación</p>
+                    <div class="installation-steps">
+                        <h4>Comandos para verificar la instalación:</h4>
+                        <ol>
+                            <li>Verificar la versión del cliente:
+                                <div class="command-block">
+                                    <code>kubectl version --client</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Verificar el estado del clúster:
+                                <div class="command-block">
+                                    <code>kubectl cluster-info</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                            <li>Listar los nodos:
+                                <div class="command-block">
+                                    <code>kubectl get nodes</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="media-section">
+                        <div class="media-container">
+                            <div class="media-row">
+                                <div class="media-column">
+                                    <div class="image-gallery">
+                                        <div class="gallery-item">
+                                            <img src="IMG/img59.jpeg" alt="Habilitando Kubernetes en Docker Desktop" class="zoomable">
+                                            <div class="caption">Habilitando Kubernetes en Docker Desktop</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img60.jpeg" alt="Kubernetes habilitado correctamente" class="zoomable">
+                                            <div class="caption">Kubernetes habilitado correctamente</div>
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="IMG/img61.jpeg" alt="Verificación versión kubectl" class="zoomable">
+                                            <div class="caption">Verificación de la versión de kubectl</div>
+                                        </div>
+                                        <div class="gallery-controls">
+                                            <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                            <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>6.2 Creación y ejecución de un pod</h3>
+                    <div class="content">
+                        <div class="text-content">
+                            <p class="paso-destacado"><strong>Paso 1:</strong> Crear el archivo de configuración del pod</p>
+                            
+                            <div class="installation-steps">
+                                <h4>Contenido del archivo pod-linux.yml:</h4>
+                                <div class="command-block">
+                                    <code>apiVersion: v1
+kind: Pod
+metadata:
+  name: linux-pod
+spec:
+  containers:
+    - name: linux-container
+      image: andreshrz/debian-dev-env:v2
+      ports:
+        - containerPort: 80</code>
+                                    <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                </div>
+                            </div>
+
+                            <p class="paso-destacado"><strong>Paso 2:</strong> Crear y ejecutar el pod</p>
+                            
+                            <div class="installation-steps">
+                                <h4>Comandos para gestionar el pod:</h4>
+                                <ol>
+                                    <li>Aplicar la configuración del pod:
+                                        <div class="command-block">
+                                            <code>kubectl apply -f pod-linux.yml</code>
+                                            <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                        </div>
+                                    </li>
+                                    <li>Verificar el estado del pod:
+                                        <div class="command-block">
+                                            <code>kubectl get pods</code>
+                                            <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                        </div>
+                                    </li>
+                                    <li>Ver detalles del pod:
+                                        <div class="command-block">
+                                            <code>kubectl describe pod linux-pod</code>
+                                            <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+
+                            <div class="media-section">
+                                <div class="media-container">
+                                    <div class="media-row">
+                                        <div class="media-column">
+                                            <div class="image-gallery">
+                                                <div class="gallery-item">
+                                                    <img src="IMG/img62.jpeg" alt="Creación del pod" class="zoomable">
+                                                    <div class="caption">Creación y verificación del pod en Kubernetes</div>
+                                                </div>
+                                                <div class="gallery-controls">
+                                                    <button class="gallery-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                                    <button class="gallery-btn next"><i class="fas fa-chevron-right"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="media-column">
+                                            <div class="video-container">
+                                                <h4>Video demostrativo: Creación y gestión del pod en Kubernetes</h4>
+                                                <iframe src="https://drive.google.com/file/d/1yp3FJNxmD6fdAH7vCxr3SCBgB8PsFPdp/preview" 
+                                                        frameborder="0" 
+                                                        allowfullscreen>
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
